@@ -1,3 +1,14 @@
+@font-face {
+    font-family: 'Inter';
+    src: local("src/public/fonts/Inter.ttf");
+}
+
 body {
     margin: 0;
+    height: 100vh;
+    background: linear-gradient(179.27deg, #2DB3DD 0.82%, #FFFFFF 86.37%) no-repeat;
+    padding-top: 60px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
 }
