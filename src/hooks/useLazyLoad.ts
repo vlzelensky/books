@@ -9,10 +9,12 @@ export const useLazyLoad = (elements: BookI[], elementsPerPage: number) => {
       event.currentTarget.scrollHeight - event.currentTarget.scrollTop ===
       event.currentTarget.clientHeight
     ) {
-      setData((prevState) => [
-        ...prevState,
-        ...elements.slice(prevState.length, prevState.length + 3),
-      ]);
+      if (data.length !== elements.length) {
+        setData((prevState) => [
+          ...prevState,
+          ...elements.slice(prevState.length, prevState.length + 3),
+        ]);
+      }
     }
   };
 
