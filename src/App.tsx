@@ -1,11 +1,13 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { Header, Books } from 'Components';
+import { Router } from './Router';
 
 const App = () => (
-  <>
+  <BrowserRouter>
     <Header />
-    <Books />
-  </>
+    <Router />
+  </BrowserRouter>
 );
 
 export default App;

@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx';
-import { booksData } from 'consts';
+import { booksData } from 'consts/booksData';
 import { BookI } from 'types';
 
 class Library {
