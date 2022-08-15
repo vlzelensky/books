@@ -8,13 +8,11 @@ export const useLazyLoad = (elements: BookI[], elementsPerPage: number) => {
     const {
       currentTarget: { scrollHeight, clientHeight, scrollTop },
     } = event;
-    if (scrollHeight - scrollTop === clientHeight) {
-      if (data.length !== elements.length) {
-        setData((prevState) => [
-          ...prevState,
-          ...elements.slice(prevState.length, prevState.length + 3),
-        ]);
-      }
+    if (scrollHeight - scrollTop === clientHeight && data.length !== elements.length) {
+      setData((prevState) => [
+        ...prevState,
+        ...elements.slice(prevState.length, prevState.length + 3),
+      ]);
     }
   };
 
