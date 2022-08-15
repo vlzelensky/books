@@ -10,9 +10,11 @@ export const Books = observer(() => {
   const { data, onScroll } = useLazyLoad(books.books, 9);
   return (
     <div className='container' onScroll={onScroll}>
-      {data.map((book) => (
-        <Book {...book} key={book.id} />
-      ))}
+      {!!data.length ? (
+        data.map((book) => <Book {...book} key={book.id} />)
+      ) : (
+        <span>Ничего не найдено</span>
+      )}
     </div>
   );
 });

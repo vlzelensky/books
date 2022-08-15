@@ -1,8 +1,12 @@
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useState, useEffect } from 'react';
 import { BookI } from 'types';
 
 export const useLazyLoad = (elements: BookI[], elementsPerPage: number) => {
   const [data, setData] = useState<BookI[]>(elements.slice(0, elementsPerPage));
+
+  useEffect(() => {
+    setData(elements.slice(0, elementsPerPage));
+  }, [elements]);
 
   const onScroll = (event: SyntheticEvent<HTMLDivElement>) => {
     const {

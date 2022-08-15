@@ -16,6 +16,7 @@
     margin-bottom: 78px;
     cursor: pointer;
     transition: background .5s;
+    height: fit-content;
 }
 
 .book:hover {
