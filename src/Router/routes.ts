@@ -1,3 +1,3 @@
-export const MAINPAGE = '/main';
+export const MAINPAGE = '/';
 
 export const BOOKPAGE = '/books/:id';

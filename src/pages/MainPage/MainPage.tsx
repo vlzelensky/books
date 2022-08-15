@@ -6,7 +6,7 @@ import { useLazyLoad } from 'hooks';
 
 import './styles.css';
 
-export const Books = observer(() => {
+export const MainPage = observer(() => {
   const { data, onScroll } = useLazyLoad(library.books, 9);
   return (
     <div className='container' onScroll={onScroll}>
