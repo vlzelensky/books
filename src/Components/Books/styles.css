@@ -1,12 +1,20 @@
 .container {
-    width: 100%;
-    padding: 58px 174px;
+    padding: 58px 0;
+    box-sizing: border-box;
+    height: calc(100vh - 134px);
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 900px;
     display: flex;
     flex-wrap: wrap;
-    box-sizing: border-box;
-    overflow: auto;
-    height: calc(100vh - 134px);
+    height: 100%;
 }
+
 
 .book {
     display: flex;
@@ -16,6 +24,7 @@
     margin-bottom: 78px;
     cursor: pointer;
     transition: background .5s;
+    height: 350px;
 }
 
 .book:hover {
