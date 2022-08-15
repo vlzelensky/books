@@ -1,0 +1,12 @@
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    height: fit-content
+}
+
+.header_counter {
+    font-size: 64px;
+    margin-right: 100px;
+}

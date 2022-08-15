@@ -1,9 +1,11 @@
 import React from 'react';
+import { Header, Books } from 'Components';
 
-function App() {
-  return (
-   <div/>
-  );
-}
+const App = () => (
+  <>
+    <Header />
+    <Books />
+  </>
+);
 
 export default App;
