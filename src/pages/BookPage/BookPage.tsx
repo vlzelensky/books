@@ -15,6 +15,7 @@ export const BookPage = observer(() => {
   const onReturn = () => navigate(-1);
 
   const book = library.books.find((book) => book.id === Number(paramsId));
+
   return (
     <div className='book_page_container'>
       {book ? (
