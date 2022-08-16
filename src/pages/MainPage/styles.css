@@ -1,11 +1,17 @@
 .container {
 	width: 100%;
-  padding: 58px 174px;
+  padding: 58px 0;
   display: flex;
-  flex-wrap: wrap;
   box-sizing: border-box;
   overflow: auto;
   height: calc(100vh - 134px);
+}
+
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	max-width: 1280px;
 }
 
 .book {

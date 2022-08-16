@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useLocation } from 'react-router-dom';
-import { Search } from 'Components';
 import { Input } from 'Components';
 import { convertTakenBooksAmount } from 'utlis/convertTakenBooksAmount';
 import { library } from 'store';
@@ -20,22 +19,16 @@ export const Header = observer(() => {
   const isMainPage = pathname === MAINPAGE;
 
   return (
-    <div className='header'>
-      <span className='header_counter'>У вас на руках: {booksTaken}</span>
-      <Input
-        type='text'
-        placeholder='Поиск книги'
-        value={searchValue}
-        onChange={onChange}
-      />
-    </div>
     <>
       {isMainPage && (
         <div className='header'>
-          <span className='header_counter'>
-            У вас на руках: {library.booksTaken} книг
-          </span>
-          <Search />
+          <span className='header_counter'>У вас на руках: {booksTaken}</span>
+          <Input
+            type='text'
+            placeholder='Поиск книги'
+            value={searchValue}
+            onChange={onChange}
+          />
         </div>
       )}
     </>

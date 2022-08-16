@@ -43,5 +43,10 @@
 
 .modal_controls_left_side {
 	display: flex;
+	align-items: center;
+}
+
+.modal_calendar_image {
+	margin-right: 60px;
 }
 

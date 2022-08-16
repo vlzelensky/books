@@ -59,3 +59,9 @@
 	width: 250px;
 	object-fit: cover;
 }
+
+.modal_text {
+	margin-top: 20px;
+	font-size: 40px;
+	font-weight: 300;
+}
