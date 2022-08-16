@@ -1,4 +1,4 @@
-.search {
+.input_wrapper {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -11,12 +11,12 @@
 	padding: 12px 13px;
 }
 
-.search_input {
+.input {
 	background: none;
 	border: none;
 	width: 90%;
 }
 
-.search_input:focus {
+.input:focus {
 	outline: none;
 }
