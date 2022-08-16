@@ -11,6 +11,7 @@ export const Header = observer(() => {
   const onChange = (value: string) => setSearchValue(value);
 
   const booksTaken = convertTakenBooksAmount(library.booksTaken);
+
   return (
     <div className='header'>
       <span className='header_counter'>У вас на руках: {booksTaken}</span>
