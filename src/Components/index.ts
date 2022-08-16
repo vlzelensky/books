@@ -1,3 +1,3 @@
 export * from './Header';
-export * from './Search';
 export * from './Books';
+export * from './Input';
