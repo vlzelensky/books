@@ -21,6 +21,8 @@
 	flex-direction: column;
 	align-items: center;
 	flex: 1;
+	overflow: auto;
+
 }
 
 .book_page_image {
@@ -50,4 +52,10 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.modal_image {
+	height: 314px;
+	width: 250px;
+	object-fit: cover;
 }

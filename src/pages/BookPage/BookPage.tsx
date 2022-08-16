@@ -33,11 +33,13 @@ export const BookPage = observer(() => {
               Читать
             </button>
           </div>
+          <Modal visible={isVisible} onConfirm={() => {}} onClose={handleIsVisible}>
+            <img className='modal_image' src={book.image} alt={book.name} />
+          </Modal>
         </div>
       ) : (
         <span>404</span>
       )}
-      <Modal visible={isVisible} />
     </div>
   );
 });
