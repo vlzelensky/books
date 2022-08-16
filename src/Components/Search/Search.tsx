@@ -1,7 +1,8 @@
 import { FC, ChangeEvent } from 'react';
-import './styles.css';
 import { observer } from 'mobx-react-lite';
 import { library } from '../../store';
+
+import './styles.css';
 
 export const Search: FC = observer(() => {
   const onChange = ({ target: { value } }: ChangeEvent<HTMLInputElement>) => {

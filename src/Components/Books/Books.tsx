@@ -10,13 +10,11 @@ export const Books = observer(() => {
   return (
     <div className='container' onScroll={onScroll}>
       <div className='wrapper'>
-
-      {!!data.length ? (
-        data.map((book) => <Book {...book} key={book.id} />)
-      ) : (
-        <span>Ничего не найдено</span>
-      )}
-
+        {!!data.length ? (
+          data.map((book) => <Book {...book} key={book.id} />)
+        ) : (
+          <span>Ничего не найдено</span>
+        )}
       </div>
     </div>
   );
