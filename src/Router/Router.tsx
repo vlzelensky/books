@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { MAINPAGE, BOOKPAGE } from './routes';
-import { MainPage } from 'Components';
-import { BookPage } from 'pages';
+import { BookPage, MainPage } from 'pages';
 
 export const Router = () => {
   return (

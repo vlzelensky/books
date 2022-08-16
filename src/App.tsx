@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Header, MainPage } from 'Components';
+import { Header } from 'Components';
 import { Router } from './Router';
 
 const App = () => (
