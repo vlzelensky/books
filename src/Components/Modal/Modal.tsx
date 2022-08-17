@@ -6,14 +6,10 @@ import calendarImage from 'public/images/calendarImage.png';
 
 import './styles.css';
 
-export const Modal: FC<ModalProps> = ({ visible, children, onClose, onConfirm }) => {
+export const Modal: FC<ModalProps> = ({ children, onClose, onConfirm }) => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const onChange = (value: string) => setInputValue(value);
-
-  if (!visible) {
-    return null;
-  }
 
   return createPortal(
     <div className='modal_overlay' onClick={onClose}>
