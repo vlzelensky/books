@@ -10,27 +10,27 @@ import './styles.css';
 
 export const Header = observer(() => {
   const [searchValue, setSearchValue] = useState<string>('');
+  const { pathname } = useLocation();
 
   const onChange = (value: string) => setSearchValue(value);
 
   const booksTaken = convertTakenBooksAmount(library.booksTaken);
 
-  const { pathname } = useLocation();
   const isMainPage = pathname === MAINPAGE;
 
+  if (!isMainPage) {
+    return null;
+  }
+
   return (
-    <>
-      {isMainPage && (
-        <div className='header'>
-          <span className='header_counter'>У вас на руках: {booksTaken}</span>
-          <Input
-            type='text'
-            placeholder='Поиск книги'
-            value={searchValue}
-            onChange={onChange}
-          />
-        </div>
-      )}
-    </>
+    <div className='header'>
+      <span className='header_counter'>У вас на руках: {booksTaken}</span>
+      <Input
+        type='text'
+        placeholder='Поиск книги'
+        value={searchValue}
+        onChange={onChange}
+      />
+    </div>
   );
 });

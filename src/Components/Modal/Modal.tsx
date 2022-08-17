@@ -4,10 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { MAINPAGE } from 'Router/routes';
 import { library } from 'store';
 import { ModalProps } from './types';
+import { Input } from 'Components';
 import calendarImage from 'public/images/calendarImage.png';
 
 import './styles.css';
-import { Input } from '../Input';
 
 export const Modal: FC<ModalProps> = ({ visible, children, onClose, onConfirm, id }) => {
   const [inputValue, setInputValue] = useState<string>('');
@@ -24,27 +24,24 @@ export const Modal: FC<ModalProps> = ({ visible, children, onClose, onConfirm, i
     }
   };
 
-  return visible
-    ? createPortal(
-        <div className='modal_overlay' onClick={onClose}>
-          <div className='modal_popup' onClick={(event) => event.stopPropagation()}>
-            <div className='modal_content'>{children}</div>
-            <div className='modal_controls'>
-              <div className='modal_controls_left_side'>
-                <img
-                  className='modal_calendar_image'
-                  src={calendarImage}
-                  alt='calendar_image'
-                />
-                <Input value={inputValue} onChange={onChange} type='date' />
-              </div>
-              <button className='button secondary modal_button' onClick={onClick}>
-                Читать
-              </button>
-            </div>
+
+  return createPortal(
+    <div className='modal_overlay' onClick={onClose}>
+      <div className='modal_popup' onClick={(event) => event.stopPropagation()}>
+        <div className='modal_content'>{children}</div>
+        <div className='modal_controls'>
+          <div className='modal_controls_left_side'>
+            <img
+              className='modal_calendar_image'
+              src={calendarImage}
+              alt='calendar_image'
+            />
+            <Input value={inputValue} onChange={onChange} type='date' />
           </div>
-        </div>,
-        document.body
-      )
-    : null;
+          <button className='modal_button'>Читать</button>
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
 };
