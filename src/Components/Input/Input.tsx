@@ -15,7 +15,7 @@ export const Input: FC<InputProps> = observer(
     };
 
     return (
-      <div className={`input_wrapper ${type === 'date' && 'date'}`}>
+      <div className={`${type === 'date' && 'date'} input_wrapper`}>
         <input
           type={type}
           className='input'
