@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { observer } from 'mobx-react-lite';
 import { library } from 'store';
 import { InputProps } from './types';
@@ -15,7 +15,7 @@ export const Input: FC<InputProps> = observer(
     };
 
     return (
-      <div className='input_wrapper'>
+      <div className={`${type === 'date' && 'date'} input_wrapper`}>
         <input
           type={type}
           className='input'

@@ -11,6 +11,10 @@
 	padding: 12px 13px;
 }
 
+.date {
+	width: 213px;
+}
+
 .input {
 	background: none;
 	border: none;
