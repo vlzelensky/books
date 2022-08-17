@@ -34,7 +34,12 @@ export const BookPage = observer(() => {
               Читать
             </button>
           </div>
-          <Modal visible={isVisible} onConfirm={() => {}} onClose={handleIsVisible}>
+          <Modal
+            visible={isVisible}
+            onConfirm={() => {}}
+            onClose={handleIsVisible}
+            id={book.id}
+          >
             <img className='modal_image' src={book.image} alt={book.name} />
             <span className='modal_text'>Установите время на чтение</span>
           </Modal>

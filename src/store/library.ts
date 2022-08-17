@@ -24,12 +24,17 @@ class Library {
       );
     });
   }
-
-  takeBook(id: number) {
+  takeBook(id: number, endDate: Date) {
     this.books = this.books.map((book) =>
-      book.id === id ? { ...book, isTaken: true } : book
+      book.id === id ? { ...book, isTaken: true, endDate } : book
     );
     this.booksTaken += 1;
+  }
+  returnBook(id: number) {
+    this.books = this.books.map((book) =>
+      book.id === id ? { ...book, isTaken: false, endDate: null } : book
+    );
+    this.booksTaken -= 1;
   }
 }
 

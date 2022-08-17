@@ -4,4 +4,5 @@ export interface BookProps {
   name: string;
   image: string;
   isTaken: boolean;
+  endDate: Date | null;
 }
