@@ -6,7 +6,7 @@ import calendarImage from 'public/images/calendarImage.png';
 
 import './styles.css';
 
-export const Modal: FC<ModalProps> = ({ children, onClose, onConfirm }) => {
+export const Modal: FC<ModalProps> = ({ children, onClose }) => {
   const [inputValue, setInputValue] = useState<string>('');
 
   const onChange = (value: string) => setInputValue(value);
@@ -24,9 +24,7 @@ export const Modal: FC<ModalProps> = ({ children, onClose, onConfirm }) => {
             />
             <Input value={inputValue} onChange={onChange} type='date' />
           </div>
-          <button className='modal_button' onClick={onConfirm}>
-            Читать
-          </button>
+          <button className='modal_button'>Читать</button>
         </div>
       </div>
     </div>,
