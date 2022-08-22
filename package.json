@@ -67,7 +67,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
   },
   "eslintConfig": {
     "extends": [
@@ -91,7 +92,9 @@
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "eslint": "^8.21.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "webpack-bundle-analyzer": "^4.6.0",
+    "webpack-cli": "^4.10.0"
   },
   "jest": {
     "roots": [
