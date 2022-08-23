@@ -30,9 +30,7 @@ export const CountDown: FC<CountDownProps> = observer(({ endDate, isMouseOver, i
         }
       }
     }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   });
 
   return (
@@ -45,7 +43,7 @@ export const CountDown: FC<CountDownProps> = observer(({ endDate, isMouseOver, i
         </span>
       </div>
       {isMouseOver && (
-        <button className='button' onClick={() => library.returnBook(id)}>
+        <button className='button' onClick={() => library.takeOrReturnBook(id)}>
           Вернуть книгу
         </button>
       )}

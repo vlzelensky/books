@@ -18,10 +18,8 @@ export const BookPage = observer(() => {
   const book = library.books.find((book) => book.id === Number(paramsId));
 
   useEffect(() => {
-    if (book) {
-      if (book.isTaken) {
+    if (book && book.isTaken) {
         handleIsVisible();
-      }
     }
   }, [book]);
 

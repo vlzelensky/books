@@ -22,7 +22,7 @@ export const Modal: FC<ModalProps> = ({ children, onClose, book }) => {
   const takeBook = () => {
     if (inputValue) {
       const date = new Date(inputValue);
-      library.takeBook(id, date);
+      library.takeOrReturnBook(id, date);
       onClose();
       navigate(MAINPAGE);
     }
