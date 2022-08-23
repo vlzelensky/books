@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
+    "@babel/polyfill": "^7.12.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@svgr/webpack": "^5.5.0",
     "@testing-library/jest-dom": "^5.16.5",
@@ -65,9 +66,10 @@
     "workbox-webpack-plugin": "^6.4.1"
   },
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+    "dev": "cross-env NODE_ENV=development webpack --mode development",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
   "eslintConfig": {
     "extends": [
@@ -88,9 +90,13 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
     "@typescript-eslint/eslint-plugin": "^5.33.0",
     "@typescript-eslint/parser": "^5.33.0",
     "clean-webpack-plugin": "^4.0.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.21.0",
     "prettier": "^2.7.1",
     "webpack-bundle-analyzer": "^4.6.0",
