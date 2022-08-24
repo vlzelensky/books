@@ -9,11 +9,11 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+const mode = isDev => isDev ? 'development' : 'production'
+
 const optimization = () => {
     const config = {
-        splitChunks: {
-            chunks: "all"
-        }
+
     }
     if (isProd) {
         config.minimizer = [
@@ -25,7 +25,7 @@ const optimization = () => {
     return config
 }
 
-const fileName = ext => isDev ? `[name].${ext}` : `[name].[hash].${ext}`
+const fileName = ext => isDev ? `[name].bundle.${ext}` : `[name].[hash].${ext}`
 
 const babelOptions = preset => {
     const options = {
@@ -42,7 +42,7 @@ const babelOptions = preset => {
 
 module.exports = {
     context: path.resolve(__dirname, 'src'),
-    mode: "development",
+    mode: mode(),
     entry: './index.tsx',
     output: {
         filename: fileName('js'),
@@ -104,7 +104,7 @@ module.exports = {
                 use: ['file-loader']
             },
             {
-                test: /\.(ttf, woff, woff2)$/,
+                test: /\.(ttf| woff| woff2)$/,
                 use: ['file-loader']
             },
             {
@@ -130,7 +130,7 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-react')
+                    options: babelOptions( ["@babel/preset-react", {"runtime": "automatic"}])
                 },
 
             },
