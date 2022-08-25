@@ -30,9 +30,7 @@ export const CountDown: FC<CountDownProps> = observer(({ endDate, isMouseOver, i
         }
       }
     }, 1000);
-    return () => {
-      clearInterval(interval);
-    };
+    return () => clearInterval(interval);
   });
 
   return (
