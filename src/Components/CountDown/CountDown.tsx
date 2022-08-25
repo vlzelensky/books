@@ -40,8 +40,8 @@ export const CountDown: FC<CountDownProps> = observer(({ endDate, isMouseOver, i
       <div className='countdown_wrapper'>
         <span>До возврата:</span>
         <span>
-          {hours < 10 ? '0' + hours : hours}:{minutes < 10 ? '0' + minutes : minutes}:
-          {seconds < 10 ? '0' + seconds : seconds}
+          {hours < 10 ? `0${hours}` : hours}:{minutes < 10 ? `0${minutes}` : minutes}:
+          {seconds < 10 ? `0 ${seconds}` : seconds}
         </span>
       </div>
       {isMouseOver && (
