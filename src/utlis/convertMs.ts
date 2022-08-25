@@ -6,13 +6,9 @@ export const convertMs = (ms: number) => {
   seconds = seconds % 60;
   minutes = minutes % 60;
 
-  hours = hours < 10 ? '0' + hours : hours;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-
   return {
-    initHours: Number(hours),
-    initMinutes: Number(minutes),
-    initSeconds: Number(seconds),
+    initHours: hours,
+    initMinutes: minutes,
+    initSeconds: seconds,
   };
 };
