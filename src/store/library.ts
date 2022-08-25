@@ -2,6 +2,7 @@ import { makeAutoObservable } from 'mobx';
 import { booksData } from 'consts';
 import { BookI } from 'types';
 import { mergeBooksWithLocalStorage } from '../utlis/mergeBooksWithLocalStorage';
+import { mapBooks } from '../utlis/mapBooks';
 
 class Library {
   constructor() {
@@ -26,30 +27,26 @@ class Library {
     });
     this.books = mergeBooksWithLocalStorage(filteredBooks);
   }
-  takeOrReturnBook(id: number, endDate?: Date) {
-    this.books = this.books.map((book) => {
-      if (book.id === id) {
-        const localStorageItem = localStorage.getItem('takenBooks');
-        if (localStorageItem) {
-          let takenBooks = JSON.parse(localStorageItem);
-          if (endDate) {
-            takenBooks.push({ id, endDate });
-          } else {
-            takenBooks = takenBooks.filter(
-                (takenBook: { id: number; endDate: Date }) => takenBook.id !== id
-            );
-          }
-          localStorage.setItem('takenBooks', JSON.stringify(takenBooks));
-        } else {
-          if (endDate) {
-            localStorage.setItem('takenBooks', JSON.stringify([{ id, endDate }]));
-          }
-        }
-        return { ...book, isTaken: !!endDate, endDate: endDate || null };
-      }
-      return book
-    })
-    this.booksTaken = endDate ? this.booksTaken + 1 : this.booksTaken - 1
+  takeBook(id: number, endDate: Date) {
+    this.books = mapBooks(
+      id,
+      'take',
+      (takenBooks) => {
+        const books = [...takenBooks, { id, endDate }];
+        localStorage.setItem('takenBooks', JSON.stringify(books));
+      },
+      endDate
+    );
+    this.booksTaken += 1;
+  }
+  returnBook(id: number) {
+    this.books = mapBooks(id, 'return', (takenBooks) => {
+      const filteredBooks = takenBooks.filter(
+        (takenBook: { id: number; endDate: Date }) => takenBook.id !== id
+      );
+      localStorage.setItem('takenBooks', JSON.stringify(filteredBooks));
+    });
+    this.booksTaken -= 1;
   }
 }
 

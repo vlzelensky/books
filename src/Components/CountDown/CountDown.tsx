@@ -43,7 +43,7 @@ export const CountDown: FC<CountDownProps> = observer(({ endDate, isMouseOver, i
         </span>
       </div>
       {isMouseOver && (
-        <button className='button' onClick={() => library.takeOrReturnBook(id)}>
+        <button className='button' onClick={() => library.returnBook(id)}>
           Вернуть книгу
         </button>
       )}
