@@ -9,7 +9,6 @@ export const mapBooks = (
   return library.books.map((book) => {
     if (book.id === id) {
       const localStorageItem = localStorage.getItem('takenBooks');
-
       if (localStorageItem) {
         let takenBooks = JSON.parse(localStorageItem);
         callback(takenBooks);
