@@ -11,20 +11,6 @@ const isProd = !isDev
 
 const mode = isDev => isDev ? 'development' : 'production'
 
-const optimization = () => {
-    const config = {
-
-    }
-    if (isProd) {
-        config.minimizer = [
-            new CssMinimizerPlugin(),
-            new TerserWebpackPlugin()
-        ]
-    }
-
-    return config
-}
-
 const fileName = ext => isDev ? `[name].bundle.${ext}` : `[name].[hash].${ext}`
 
 const babelOptions = preset => {
@@ -83,7 +69,12 @@ module.exports = {
             filename: fileName('css'),
         })
     ],
-    optimization: optimization(),
+    optimization: {
+        minimizer: isProd && [
+            new CssMinimizerPlugin(),
+            new TerserWebpackPlugin()
+        ]
+    },
     devServer: {
         port: 3000,
         hot: isDev
