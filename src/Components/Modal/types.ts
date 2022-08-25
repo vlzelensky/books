@@ -1,7 +1,9 @@
 import React from 'react';
+import { BookI } from '../../types';
 
 export interface ModalProps {
-  onClose?: () => void;
+  book: BookI;
+  onClose: () => void;
   children?: React.ReactNode;
   controls?: React.ReactNode;
 }

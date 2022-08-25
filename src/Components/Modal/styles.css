@@ -54,3 +54,8 @@
 	margin-right: 60px;
 }
 
+.modal_countdown_wrapper {
+	position: relative;
+	flex: 1;
+}
+

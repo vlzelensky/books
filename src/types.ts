@@ -5,4 +5,5 @@ export interface BookI {
   description: string;
   image: string;
   isTaken: boolean;
+  endDate: Date | null;
 }

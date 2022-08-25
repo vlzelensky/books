@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { observer } from 'mobx-react-lite';
 import { library } from 'store';
@@ -17,8 +17,14 @@ export const BookPage = observer(() => {
 
   const book = library.books.find((book) => book.id === Number(paramsId));
 
+  useEffect(() => {
+    if (book && book.isTaken) {
+      handleIsVisible();
+    }
+  }, [book]);
+
   if (book) {
-    const { author, name, image, description } = book;
+    const { author, name, image, description, isTaken } = book;
 
     return (
       <div className='book_page_container'>
@@ -38,9 +44,9 @@ export const BookPage = observer(() => {
             </button>
           </div>
           {isVisible && (
-            <Modal onClose={handleIsVisible}>
+            <Modal onClose={handleIsVisible} book={book}>
               <img className='modal_image' src={image} alt={name} />
-              <span className='modal_text'>Установите время на чтение</span>
+              {!isTaken && <span className='modal_text'>Установите время на чтение</span>}
             </Modal>
           )}
         </div>

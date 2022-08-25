@@ -7,7 +7,8 @@ export const booksData = [
       'Одна из лучших фэнтези-саг за всю историю существования жанра. Оригинальное, масштабное эпическое произведение, одновременно и свободное от влияния извне, и связанное с классической мифологической, легендарной и сказовой традицией. Шедевр не только писательского мастерства Анджея Сапковского, но и переводческого искусства Евгения Павловича Вайсброта. «Сага о Геральте» – в одном томе. Бесценный подарок и для поклонника прекрасной фантастики, и для ценителя просто хорошей литературы. Перед читателем буквально оживает необычный, прекрасный и жестокий мир литературной легенда, в котором обитают эльфы и гномы, оборотни, вампиры и «низушки»-хоббиты, драконы и монстры, – но прежде всего люди. Очень близкие нам, понятные и человечные люди – такие как мастер меча ведьмак Геральт, его друг, беспутный менестрель Лютик, его возлюбленная, прекрасная чародейка Йеннифэр, и приемная дочь – безрассудно отважная юная Цири…',
     image:
       'https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/6375365-andzhey-sapkovskiy-vedmak.webp',
-    isTaken: true,
+    isTaken: false,
+    endDate: null,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const booksData = [
     image:
       'https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_415/128316-dzhon-tolkin-hraniteli-kolca.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const booksData = [
     image:
       'https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_415/128311-dzhon-tolkin-dve-tverdyni.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const booksData = [
     image:
       'https://cv1.litres.ru/pub/c/elektronnaya-kniga/cover_415/128318-dzhon-tolkin-vozvraschenie-korolya-128318.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 5,
@@ -48,6 +52,7 @@ export const booksData = [
     image:
       'https://cv3.litres.ru/pub/c/elektronnaya-kniga/cover_415/119433-dzhek-london-martin-iden.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 6,
@@ -58,6 +63,7 @@ export const booksData = [
     image:
       'https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/9447797-frensis-skott-ficdzherald-velikiy-getsbi.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 7,
@@ -68,6 +74,7 @@ export const booksData = [
     image:
       'https://cv4.litres.ru/pub/c/elektronnaya-kniga/cover_415/435545-ayzek-azimov-ya-robot.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 8,
@@ -78,6 +85,7 @@ export const booksData = [
     image:
       'https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/129095-mihail-bulgakov-master-i-margarita.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 9,
@@ -88,6 +96,7 @@ export const booksData = [
     image:
       'https://cv4.litres.ru/pub/c/elektronnaya-kniga/cover_415/132146-vladimir-obruchev-zemlya-sannikova.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 10,
@@ -98,6 +107,7 @@ export const booksData = [
     image:
       'https://cv6.litres.ru/pub/c/elektronnaya-kniga/cover_415/67303161-stiven-king-billi-sammers.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 11,
@@ -108,6 +118,7 @@ export const booksData = [
     image:
       'https://cv9.litres.ru/pub/c/elektronnaya-kniga/cover_415/119490-sergey-lukyanenko-spektr.webp',
     isTaken: false,
+    endDate: null,
   },
   {
     id: 12,
@@ -118,5 +129,6 @@ export const booksData = [
     image:
       'https://cv3.litres.ru/pub/c/pdf-kniga/cover_415/66655834-a-benks-piter-react-sovremennye-shablony-dlya-razrabotki-prilozhe-66655834.webp',
     isTaken: false,
+    endDate: null,
   },
 ];

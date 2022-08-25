@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { observer } from 'mobx-react-lite';
 import { library } from 'store';
 import { useLazyLoad } from 'hooks';
@@ -7,6 +7,7 @@ import './styles.css';
 
 export const MainPage = observer(() => {
   const { data, onScroll } = useLazyLoad(library.books, 9);
+
   return (
     <div className='container' onScroll={onScroll}>
       <div className='wrapper'>
