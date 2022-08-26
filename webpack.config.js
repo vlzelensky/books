@@ -21,7 +21,7 @@ const optimization = () => {
     },
   };
   if (isProd) {
-    optimization.minimizer = [new CssMinimizerPlugin(), new TerserWebpackPlugin()];
+    config.minimizer = [new CssMinimizerPlugin(), new TerserWebpackPlugin()];
   }
   return config;
 };
