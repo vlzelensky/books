@@ -29,10 +29,7 @@ export const Modal: FC<ModalProps> = ({ children, onClose, book }) => {
   };
 
   const closeModal = () => {
-    if (isTaken) {
-      return;
-    }
-    onClose();
+    if (!isTaken) onClose();
   };
 
   return createPortal(

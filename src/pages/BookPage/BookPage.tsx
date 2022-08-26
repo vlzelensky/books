@@ -19,7 +19,7 @@ export const BookPage = observer(() => {
 
   useEffect(() => {
     if (book && book.isTaken) {
-        handleIsVisible();
+      handleIsVisible();
     }
   }, [book]);
 
