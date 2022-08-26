@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useLocation } from 'react-router-dom';
 import { Input } from 'Components';
-import { convertTakenBooksAmount } from 'utlis/convertTakenBooksAmount';
+import { convertTakenBooksAmount } from 'utils';
 import { library } from 'store';
 import { MAINPAGE } from 'Router/routes';
 

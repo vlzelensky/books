@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 import { library } from 'store';
 import { CountDownProps } from './types';
-import { convertMs } from 'utlis/convertMs';
+import { convertMs } from 'utils';
 
 import './styles.css';
 

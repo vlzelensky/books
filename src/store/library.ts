@@ -1,8 +1,7 @@
 import { makeAutoObservable } from 'mobx';
 import { booksData } from 'consts';
 import { BookI } from 'types';
-import { mergeBooksWithLocalStorage } from '../utlis/mergeBooksWithLocalStorage';
-import { mapBooks } from '../utlis/mapBooks';
+import { mergeBooksWithLocalStorage, mapBooks } from 'utils';
 
 class Library {
   constructor() {
